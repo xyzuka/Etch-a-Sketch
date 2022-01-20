@@ -1,2 +1,3 @@
 # JavaScript-Project-2-Etch-a-Sketch
-My second JS project - Etch a Sketch. A challenge to learn DOM Manipulation and further enhance my JS knowledge.
+<p>My second JS project - Etch a Sketch.</p>
+<p>Challenging myself to learn DOM Manipulation and to further enhance my JS knowledge.</p>
