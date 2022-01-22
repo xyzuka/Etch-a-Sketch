@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body {
+    font-family: VT323, sans-serif;
+    color: black;
+    line-height: 1.5; /* sets the line height of a paragraph */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top left, #28a4b4, #6fc6d5);
+}
+
+header {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.container {
+    height: 300px;
+    width: 450px;
+    border: solid 2px black;
+    display: flex;
+    flex-direction: row;
+}
+
+.sketchbox {
+    width: 300px;
+    height: 300px;
+    border: solid 2px red;
+}
+
+.side_bar {
+    width: 150px;
+    border: solid 2px blue;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: underline;
+    color: black;
+}
