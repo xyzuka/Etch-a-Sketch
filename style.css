@@ -18,22 +18,29 @@ header {
 }
 
 .container {
-    height: 300px;
-    width: 450px;
-    border: solid 2px black;
+    height: 500px;
+    width: 650px;
+    /* border: solid 2px black; */
     display: flex;
-    flex-direction: row;
-}
-
-.sketchbox {
-    width: 300px;
-    height: 300px;
-    border: solid 2px red;
+    margin-top: 20px;
 }
 
 .side_bar {
     width: 150px;
-    border: solid 2px blue;
+    /* border: solid 2px blue; */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.sketchbox {
+    display: flex;
+    flex: 1;
+    background-color: rgb(230, 230, 230);
+    box-shadow: 5px 5px 5px rgb(75, 75, 75);
+    /* border: solid 2px red; */
 }
 
 .footer {
@@ -51,4 +58,9 @@ header {
 a {
     text-decoration: underline;
     color: black;
+}
+
+button {
+    font-family: VT323, sans-serif;
+    font-size: 20px;
 }
