@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: VT323, sans-serif;
     color: black;
@@ -63,4 +69,17 @@ a {
 button {
     font-family: VT323, sans-serif;
     font-size: 20px;
+    padding: 5px;
+    border-radius: 10%;
+    cursor: pointer;
+    box-shadow: 4px 4px 4px rgb(75, 75, 75);
 }
+
+button:hover {
+    size: 1.1;
+    background-color: #28a4b4;
+    color: white;
+    transition-duration: 0.4s;
+    transform:scale(1.1,1.1);
+}
+
