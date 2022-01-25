@@ -44,7 +44,7 @@ header {
 }
 
 .sketchbox {
-    display: flex;
+    display: grid;
     flex: 1;
     background-color: rgb(230, 230, 230);
     box-shadow: 5px 5px 5px rgb(75, 75, 75);
@@ -79,7 +79,7 @@ button {
 
 button:hover {
     size: 1.1;
-    background-color: #28a4b4;
+    background-color: #6fc6d5;
     color: white;
     transition-duration: 0.4s;
     transform:scale(1.1,1.1);
