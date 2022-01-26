@@ -62,18 +62,12 @@ const rainBowMode = function() {
     })
 }
 
-
-
-
-
-
-
 // Toggles the active class on and off (removes black to erase)
 const eraseGrid = function() {
     let gridBox = document.querySelectorAll(".grid");
     gridBox.forEach((grid) => {
         grid.addEventListener("mouseover", (e) => {
-            grid.classList.toggle("active");
+            grid.style.background = "rgb(230, 230, 230)";
         })
     })
 }
@@ -94,7 +88,7 @@ eraserBtn.addEventListener("click", (e) => {
 const clearGrid = function() {
     let gridBox = document.querySelectorAll(".grid");
     gridBox.forEach((grid) => {
-        grid.classList.remove("active");
+        grid.style.background = "rgb(230, 230, 230)";
     })
 }
 
