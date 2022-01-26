@@ -8,7 +8,11 @@ const rainBowBtn = document.querySelector(".rainbow-mode");
 const eraserBtn = document.querySelector(".eraser");
 const clearBtn = document.querySelector(".clear");
 
-// Function that takes input (rows * columns) and makes a grid
+// DEFAULT SETTINGS
+let size = 16;
+let defaultColor = "black";
+
+// Function that takes size (rows * columns) and makes a grid
 function createGrid(size) {
     for (let i = 0; i < (size * size); i++) {
         const div = document.createElement('div');
@@ -18,31 +22,63 @@ function createGrid(size) {
     }
 }
 
-createGrid(16); 
+// Default size
+createGrid(size); 
 
-// Hovering mouse will change color of div to black
-
-// selecting all of the individual grid elements
-let gridBox = document.querySelectorAll(".grid");
-gridBox.forEach((grid) => {
-    grid.addEventListener("mouseover", (e) => {
-        grid.classList.add("active");
-    })
-})
-
-// Remove active grid function
-const clearGrid = function() {
+// Hovering mouse will change color of div to BLACK
+const blackMode = function() {
+    // selecting all of the individual grid elements
+    let gridBox = document.querySelectorAll(".grid");
     gridBox.forEach((grid) => {
-        grid.classList.remove("active");
+        grid.addEventListener("mouseover", (e) => {
+            grid.style.background = defaultColor;
+        })
     })
 }
 
-// Clear button functionality
-clearBtn.addEventListener("click", (e) => {
-        clearGrid();
+blackMode();
+
+// Rainbow button
+rainBowBtn.addEventListener("click", (e) => {
+    if (rainBowBtn.textContent === "Rainbow Mode Off") {
+        rainBowBtn.textContent = "Rainbow Mode On";
+        rainBowMode();
+    } else {
+        rainBowBtn.textContent = "Rainbow Mode Off";
+        blackMode();
+    }
 })
 
-// Erase button functionality
+// Function for rainbow mode
+const rainBowMode = function() {
+    let gridBox = document.querySelectorAll(".grid");
+    gridBox.forEach((grid) => {
+        grid.addEventListener("mouseover", (e) => {
+            let R = Math.floor(Math.random() * 255);
+            let B = Math.floor(Math.random() * 255);
+            let G = Math.floor(Math.random() * 255);
+            grid.style.background = `rgb(${R},${B},${G})`
+        })
+    })
+}
+
+
+
+
+
+
+
+// Toggles the active class on and off (removes black to erase)
+const eraseGrid = function() {
+    let gridBox = document.querySelectorAll(".grid");
+    gridBox.forEach((grid) => {
+        grid.addEventListener("mouseover", (e) => {
+            grid.classList.toggle("active");
+        })
+    })
+}
+
+// Erase button button
 eraserBtn.addEventListener("click", (e) => {
     // Enable Eraser
     if (eraserBtn.textContent === "Eraser Off") {
@@ -54,23 +90,24 @@ eraserBtn.addEventListener("click", (e) => {
     eraseGrid();
 })
 
-// Toggles the active class on and off (removes black)
-const eraseGrid = function() {
+// Clear Function
+const clearGrid = function() {
     let gridBox = document.querySelectorAll(".grid");
     gridBox.forEach((grid) => {
-        grid.addEventListener("mouseover", (e) => {
-            grid.classList.toggle("active");
-        })
+        grid.classList.remove("active");
     })
 }
 
+// Clicking Clear Button 
+clearBtn.addEventListener("click", clearGrid);
 
 
 
 
-/* ----- PROJECT NOTES/ LESSONS LEARNT 
-
-1. Was stuck on the Eraser button functionality/toggle feature because I initially used = first in my if statement and = is only used for assigning values eg. let zero = 0; whereas I was meant to use === for comparisons
 
 
------ */
+
+// PROJECT NOTES/ LESSONS LEARNT 
+
+// 1. Was stuck on the Eraser button functionality/toggle feature because I initially used = first in my if statement and = is only used for assigning values eg. let zero = 0; whereas I was meant to use === for comparisons
+
