@@ -35,13 +35,13 @@ const resetGrid = function () {
 // Resize Sketchbox button
 resizeBtn.addEventListener("click", function() {
     let input = prompt("Please enter new dimensions of sketchbox");
-        if (input <= 100) {
+        if (input > 0 && input <= 100 && input != null) {
         // Function to resize the sketch box
         resetGrid();
         createGrid(input);
         RainBowLogic();
     } else {
-        let input_2 = prompt("Please enter a number under 100");
+        let input_2 = prompt("Please enter a number between 1 and 100");
         resetGrid();
         createGrid(input_2);
         RainBowLogic();
