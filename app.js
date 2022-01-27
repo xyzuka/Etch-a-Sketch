@@ -27,26 +27,34 @@ function createGrid(size) {
 // Default size
 createGrid(size); 
 
-/* ------- NEED HELP HERE --------- */
+const resetGrid = function () {
+    let gridBox = document.querySelectorAll(".grid");
+    gridBox.forEach(grid => grid.remove());
+}
+
 // Resize Sketchbox button
 resizeBtn.addEventListener("click", function() {
     let input = prompt("Please enter new dimensions of sketchbox");
-    if (input <= 100) {
-      // Function to resize the sketch box
-      createGrid(input);
-      clearGrid();
+        if (input <= 100) {
+        // Function to resize the sketch box
+        resetGrid();
+        createGrid(input);
+        RainBowLogic();
     } else {
-      prompt("Please enter a number under 100");
+        let input_2 = prompt("Please enter a number under 100");
+        resetGrid();
+        createGrid(input_2);
+        RainBowLogic();
     }
   })
-  /* ------- NEED HELP HERE --------- */
 
-
-
-
-
-
-
+const RainBowLogic = function() {
+    if (rainBowBtn.textContent === "Rainbow Mode On") {
+        rainBowMode();
+    } else {
+        blackMode();
+    }
+}
 
 // Hovering mouse will change color of div to BLACK
 const blackMode = function() {
@@ -124,16 +132,11 @@ const clearGrid = function() {
 // Clicking Clear Button 
 clearBtn.addEventListener("click", clearGrid);
 
-
-
-
-
-
-
-
 /* ------  PROJECT NOTES / LESSONS LEARNT ------ */
 
 // 1. Was stuck on the Eraser button functionality/toggle feature because I initially used = first in my if statement and = is only used for assigning values eg. let zero = 0; whereas I was meant to use === for comparisons
 
 // 2. Manually adding inline styles for DOM Manipulation rather than toggling classes seems to make if else functions less confusing
+
+// 3. When running functions which reset the conditions of the game or page, always consider the initial functions running and whether you need to rerun them to "reset the page"
 
